@@ -3,7 +3,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
 import Login from '../../components/signup-login-logout';
 
-export default (props) => {
+export default function requestComponent(props) {
   const {session} = useSession();
   const [requestItems, setRequestItems] = useState(0);
   const [category, setCategory] = useState(null);
