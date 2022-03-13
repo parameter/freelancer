@@ -38,7 +38,7 @@ class SupplierComponent extends React.Component {
           return <div key={ii} className="supplier__request-item">
                 <p className="supplier__request-item-id">{item2.id}</p>
                 {item2.fields.map((item3, iii) => {
-                  return <p>{item3.name}: <span>{item3.value}</span></p>
+                  return <p key={iii}>{item3.name}: <span>{item3.value}</span></p>
                 })}
             </div>
         })}

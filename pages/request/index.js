@@ -245,7 +245,7 @@ const ProductSelector = (props) => {
         return <li key={i}>{category.name}
           <ul>
             {category.items.map((item ,ii) => {
-               return <li data-id={item.id}>{item.name}</li>
+               return <li key={ii} data-id={item.id}>{item.name}</li>
             })}
           </ul>
         </li>
