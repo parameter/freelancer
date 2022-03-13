@@ -46,7 +46,7 @@ const inventory = [
   }
 ];
 
-export default function requestComponent(props) {
+export default function RequestComponent(props) {
   const {session} = useSession();
   const [category, setCategory] = useState(null);
   const [requests, setRequests] = useState([]);
