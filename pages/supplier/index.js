@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class extends React.Component {
+class SupplierComponent extends React.Component {
 
   constructor(props) {
     super(props);
@@ -99,3 +99,5 @@ export default class extends React.Component {
   }
 }
 
+SupplierComponent.displayName = "DataTable"
+export default SupplierComponent;
