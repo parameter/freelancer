@@ -49,7 +49,7 @@ const inventory = [
 export default function RequestComponent(props) {
   const {session} = useSession();
   const [category, setCategory] = useState(null);
-  const [requests, setRequests] = useState([]);
+  const [requests, setRequests] = useState([{id: '687236472f364723ajkshdjshd', fields: []}]);
   const [productSelectorOpen, setProductSelectorOpen] = useState(false);
   const [currentRequestId, setCurrentRequestId] = useState(null);
 
@@ -127,7 +127,7 @@ export default function RequestComponent(props) {
   }
 
   useEffect(() => {
-    addRequestItem();
+    
   },[])
 
   const sendRequest = async () => {
@@ -176,8 +176,6 @@ export default function RequestComponent(props) {
 const RequestItem = (props) => {
   const [productSelected, setProductSelected] = useState(false);
 
-  console.log(props.item);
-
   const updateValue = (event) => {
     props.updateValue({
       id: props.id,
@@ -189,19 +187,18 @@ const RequestItem = (props) => {
   const prinCustomFields = () => {
     if (!props.item.product.fields) { return }
     return props.item.product.fields.map((field, i) => {
-      console.log('hej',field);
       if (field.options) {
-        return <div className="request__field">
+        return <div key={i} className="request__field">
                 <label>{field.name}
                   <select>
                     {field.options.map((option, ii) => {
-                      return <option>{option}</option>
+                      return <option key={ii}>{option}</option>
                     })}
                     </select>
                 </label>
             </div>
       } else {
-        return <div className="request__field">
+        return <div key={i} className="request__field">
                 <label>{field.name}
                   <input name={field.name} onChange={(event) => {updateValue(event)}} />
                 </label>
