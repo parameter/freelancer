@@ -3,44 +3,111 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
 import Login from '../../components/signup-login-logout';
 
+const inventory = [
+  {
+    name: 'Bygg',
+    items: [
+      {
+        id: '0000',
+        name: 'Hammare',
+        fields: []
+      },
+      {
+        id: '0001',
+        name: 'Planka',
+        fields: [
+          {
+            name: 'length',
+            unit: 'm'
+          }
+        ]
+      }
+    ],
+  },
+  {
+    name: 'Kontor',
+    items: [
+      {
+        id: '0002',
+        name: 'Papper',
+        fields: []
+      },
+      {
+        id: '0003',
+        name: 'Skrivare',
+        fields: [
+          {
+            name: 'type',
+            options: ['Black and white','Colour']
+          }
+        ]
+      }
+    ]
+  }
+];
+
 export default function requestComponent(props) {
   const {session} = useSession();
-  const [requestItems, setRequestItems] = useState(0);
   const [category, setCategory] = useState(null);
   const [requests, setRequests] = useState([]);
+  const [productSelectorOpen, setProductSelectorOpen] = useState(false);
+  const [currentRequestId, setCurrentRequestId] = useState(null);
 
   const updateValue = (data) => {
-    requests.forEach((item, i) => {
+    var _requests = requests;
+    _requests.forEach((item, i) => {
       if (item.id === data.id) {
         var found = false;
-        requests[i].fields.forEach((item2, ii) => {
-          if (requests[i].fields[ii].name == data.name) {
+        _requests[i].fields.forEach((item2, ii) => {
+          if (_requests[i].fields[ii].name == data.name) {
             found = true;
-            requests[i].fields[ii].value = data.value;
+            _requests[i].fields[ii].value = data.value;
           }
         });
         if (found === false) {
-          requests[i].fields.push({name: data.name, value: data.value});
+          _requests[i].fields.push({name: data.name, value: data.value});
         }
       }
     });
-    return data;
+    setRequests(_requests);
   }
 
-  useEffect(() => {
-    console.log('WUT');
-  },[])
+  const getProduct = (id) => {
+    var foundItem = null;
+    inventory.forEach((category, i) => {
+      category.items.forEach((item, i) => {
+        if (item.id === id) {
+          foundItem = item;
+        }
+      });
+    });
+    return foundItem;
+  }
+
+  const updateRequestProduct = (id) => {
+    var _requests = requests;
+    _requests.forEach((item, i) => {
+      if (_requests[i].id === currentRequestId) {
+        _requests[i].product = getProduct(id);
+      }
+    });
+    setRequests(_requests);
+  }
 
   const updateCategory = (event) => {
     setCategory(event.target.value);
   }
 
+  const openProductSelector = (requestId) => {
+    setCurrentRequestId(requestId);
+    setProductSelectorOpen(!productSelectorOpen);
+  }
+
   const printRequestItems = () => {
     const components = []; 
     requests.forEach((item, i) => {
-      components.push(<RequestItem key={'request_item_' + i} item={item} id={item.id} updateValue={updateValue}  />);
+      components.push(<RequestItem key={'request_item_' + i} item={item} id={item.id} updateValue={updateValue} openProductSelector={openProductSelector} />);
     });
-
     return components;
   }
 
@@ -56,9 +123,12 @@ export default function requestComponent(props) {
 
   const addRequestItem = () => {
     requests.push({id: generateRandomString(8), fields: []});
-    console.log('Add article',requests);
     setRequests(requests.slice());
   }
+
+  useEffect(() => {
+    addRequestItem();
+  },[])
 
   const sendRequest = async () => {
     const formData = {
@@ -72,41 +142,41 @@ export default function requestComponent(props) {
     });
   }
 
+  const getProductId = (id) => {
+    setProductSelectorOpen(false);
+    updateRequestProduct(id);
+  }
+
+  /*
   if (!session) {
     return <div><Login /></div>
-  }
+  } */
   
   return (
     <>
-      {console.log(requests)}
       <h1>Make a request</h1>
       <div className="requests__wrapper request">
         <form className="request__form">
-          <div className="request__field">
-            <label>Kategori
-              <select onChange={(event) => updateCategory(event)} name="category" required="required">
-                <option value="">—</option>
-                <option value="001">Byggnadsvaror</option>
-                <option value="002">Elektronik</option>
-                <option value="003">Kontorsvaror</option>
-                <option value="004">Livsmedelsvaror</option>
-                <option value="005">Maskinuthyrning</option>
-                <option value="006">Övrigt</option>
-                <option value="007">Renhållning</option>
-                <option value="008">Tjänstebilar</option>
-              </select>
-            </label>
+          <div className="request__inner-wrapper">
+             {printRequestItems()}
+             <div className="request__add">
+               <div onClick={addRequestItem}>
+                  Lägg till en artikel <img src="/icons/plus-sign-svgrepo-com.svg" />
+                </div>
+              </div>
           </div>
-          {printRequestItems()}
         </form>
-        <div className="request__add"><div onClick={addRequestItem}>Lägg till en artikel</div></div>
         <button onClick={() => sendRequest()} type="button" className="request__send">Skicka förfrågan</button>
       </div>
+      <ProductSelector shown={productSelectorOpen} getProductId={getProductId} />
     </>
   )
 }
 
 const RequestItem = (props) => {
+  const [productSelected, setProductSelected] = useState(false);
+
+  console.log(props.item);
 
   const updateValue = (event) => {
     props.updateValue({
@@ -116,23 +186,76 @@ const RequestItem = (props) => {
     });
   }
 
-  return (<>
-      <div className="request__field">
+  const prinCustomFields = () => {
+    if (!props.item.product.fields) { return }
+    return props.item.product.fields.map((field, i) => {
+      console.log('hej',field);
+      if (field.options) {
+        return <div className="request__field">
+                <label>{field.name}
+                  <select>
+                    {field.options.map((option, ii) => {
+                      return <option>{option}</option>
+                    })}
+                    </select>
+                </label>
+            </div>
+      } else {
+        return <div className="request__field">
+                <label>{field.name}
+                  <input name={field.name} onChange={(event) => {updateValue(event)}} />
+                </label>
+            </div>
+      }
+    });
+  }
+
+  return (<div className="request__item">
+      <div className="request__field request__field--product">
         <label>Produkt
-          <input name="product" onChange={(event) => {updateValue(event)}} />
+          <button className="request__product-button" data-requestid={props.id} onClick={() => props.openProductSelector(props.id)} type="button">
+            {props.item.product ? props.item.product.name : 'Välj produkt'}
+          </button>
         </label>
       </div>
-
-      <div className="request__field">
-        <label>Budget
-          <input name="budget" onChange={(event) => {updateValue(event)}} />
-        </label>
-      </div>
-
-      <div className="request__field">
-        <label>Mängd
-          <input name="amount" onChange={(event) => {updateValue(event)}} />
-        </label>
-      </div>
-  </>)
+      {props.item.product && 
+      <>
+        <div className="request__field">
+          <label>Budget
+            <input name="budget" onChange={(event) => {updateValue(event)}} />
+          </label>
+        </div>
+      
+        <div className="request__field">
+          <label>Mängd
+            <input name="amount" onChange={(event) => {updateValue(event)}} />
+          </label>
+        </div>
+        {prinCustomFields()}
+      </>}
+    </div>)
 }
+
+const ProductSelector = (props) => {
+
+  const getProductId = (event) => {
+    props.getProductId(event.target.getAttribute('data-id'));
+  }
+
+  const printInventory = () => {
+    return <ul onClick={(event) => getProductId(event)}>
+      {inventory.map((category ,i) => {
+        return <li>{category.name}
+          <ul>
+            {category.items.map((item ,ii) => {
+               return <li data-id={item.id}>{item.name}</li>
+            })}
+          </ul>
+        </li>
+      })}
+    </ul>
+  }
+
+  return <div className="inventory__tree-holder" style={{display: (props.shown ? 'block' : 'none')}}>{printInventory()}</div>
+}
+
