@@ -33,9 +33,9 @@ class SupplierComponent extends React.Component {
   printRequests = () => {
     console.log('printRequests',this.state.requests);
     return this.state.requests.map((item, i) => {
-      return <div className="supplier__requests-request">
+      return <div key={i} className="supplier__requests-request">
         {item.requests.map((item2, ii) => {
-          return <div className="supplier__request-item">
+          return <div key={ii} className="supplier__request-item">
                 <p className="supplier__request-item-id">{item2.id}</p>
                 {item2.fields.map((item3, iii) => {
                   return <p>{item3.name}: <span>{item3.value}</span></p>

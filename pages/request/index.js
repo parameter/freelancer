@@ -161,7 +161,7 @@ export default function RequestComponent(props) {
              {printRequestItems()}
              <div className="request__add">
                <div onClick={addRequestItem}>
-                  Lägg till en artikel <img src="/icons/plus-sign-svgrepo-com.svg" />
+                  Lägg till en artikel <image src="/icons/plus-sign-svgrepo-com.svg" alt="plus icon" />
                 </div>
               </div>
           </div>
@@ -242,7 +242,7 @@ const ProductSelector = (props) => {
   const printInventory = () => {
     return <ul onClick={(event) => getProductId(event)}>
       {inventory.map((category ,i) => {
-        return <li>{category.name}
+        return <li key={i}>{category.name}
           <ul>
             {category.items.map((item ,ii) => {
                return <li data-id={item.id}>{item.name}</li>
