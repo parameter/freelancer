@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-export default (props) => {
+export default function SignupLOginLOgout(props) {
 
     const signUp = async (event) => {
         event.preventDefault();
