@@ -1,6 +1,6 @@
 import { getSession } from 'next-auth/react';
-import connectDB from '../../utils/mongodb';
-import RequestDB from '../../models/request-model';
+import connectDB from '../../../utils/mongodb';
+import RequestDB from '../../../models/request-model';
 
 const handler = async (req, res) => {
     const session = await getSession({ req });
