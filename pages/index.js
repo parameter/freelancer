@@ -41,7 +41,7 @@ export default function Home() {
       <div className="article__wrap article__post">
         <p>The idea here is to make it easier for &#123;the world&#125; to find me.</p>
         <p>I wanted to see what it would look like without intermediaries.</p>
-        <p>Now, once we can see through the noise and the background radiation of the universe it's time to get some work done.</p>
+        <p>Now, once we can see through the noise and the background radiation of the universe it&apos;s time to get some work done.</p>
         <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-user"></div>
       </div>
       <div className="article__wrap article__post">
