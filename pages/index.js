@@ -25,8 +25,8 @@ export default function Home() {
             </div>
             <div className="modal__job-techlist">
               <ul>
-                {jobsJson.jobs[openJob].techlist.map((tech) => {
-                  return <li>{tech}</li>
+                {jobsJson.jobs[openJob].techlist.map((tech, index) => {
+                  return <li key={index}>{tech}</li>
                 })}
               </ul>
             </div>
