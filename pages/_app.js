@@ -33,7 +33,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
                   <ul className="base__nav">
                     {pages.map((item, index) => {
                       return (
-                        <li>
+                        <li key={index}>
                           <Link key={index} href={item.path}>
                             <a
                               className={`${
