@@ -13,6 +13,10 @@ html, body {
   font-family: 'c64';
   src: url(/fonts/c64/c64_pro-style.ttf);
 }
+@font-face {
+    font-family: 'monospace_';
+    src: url(/fonts/monospace/nk57-monospace-cd-rg.ttf);
+}
 
 .base {
   display: flex;
@@ -56,8 +60,11 @@ html, body {
         font-size: 24px;
         letter-spacing: 0.09em;
         color: #FFFAEB;
-        margin-top: 20px;
+        padding: 0;
+        margin: 33px 0 0 0;
         font-weight: 100;
+        transform: translateX(5px);
+        text-shadow: 2px 2px rgb(0 0 0 / 20%);
       }
 
       &-logo {
@@ -69,7 +76,8 @@ html, body {
           height: 120px;
           background-color: #FFFAEB;
           border-radius: 50%;
-          margin: 40PX 0 0 0;
+          margin: 60px 0 0 0;
+          box-shadow: 4px 4px 2px rgb(0 0 0 / 20%);
       }
 
       &-logo-slider {
@@ -165,7 +173,8 @@ html, body {
         background: #fff;
 
         p {
-            font-family: monospace;
+            font-family: "monospace_";
+            letter-spacing: 0.046em;
             font-size: 20px;
             margin: 0 0 17px 0;
             max-width: 840px;
@@ -177,6 +186,7 @@ html, body {
     &__post {
         margin: 0 0 22px 0;
         background-color: #FFFAEB;
+        box-shadow: 2px 2px 2px rgb(0 0 0 / 12%);
     }
 
     &__post-user {
@@ -193,11 +203,23 @@ html, body {
     }
 
     &__pop-link {
-        color: #24CF02;
+        position: relative;
+        color: #9D00FF;
         font-weight: 600;
         text-decoration: none;
         padding-bottom: 2px;
-        border-bottom: 2px solid #24CF02;
+        padding-right: 37px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            right: 0;
+            top: -2px;
+            background-image: url(/icons/icons8-open-64.png);
+            background-size: 100% auto;
+        }
     }
 }
 
