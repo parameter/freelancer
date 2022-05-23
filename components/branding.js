@@ -57,7 +57,7 @@ const Branding = (props) => {
     const printColorDots = () => {
         const colors = ['#807D74', '#DEAE1F', '#AAFF00'];
         return colors.map((color) => {
-            return <div className={"base__branding-color-picker-dot" + (props.currentBgColor === color ? ' selected' : '')} onClick={() => setBgColor(color)} style={{backgroundColor: color}}></div>
+            return <div key={color} className={"base__branding-color-picker-dot" + (props.currentBgColor === color ? ' selected' : '')} onClick={() => setBgColor(color)} style={{backgroundColor: color}}></div>
         })
     }
 
