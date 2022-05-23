@@ -201,10 +201,10 @@ html, body {
     &.selected:after {
         content: '';
         position: absolute;
-        left: 10px;
-        bottom: -18px;
-        width: 11px;
-        height: 11px;
+        left: 11px;
+        bottom: -19px;
+        width: 9px;
+        height: 9px;
         border-radius: 6px;
         background-color: #fff;
     }

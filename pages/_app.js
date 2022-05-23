@@ -10,6 +10,12 @@ const UseSession = ({ children }) => {
   return children(session)
 }
 
+const bgColors = [
+  { color: '#807D74', opacity: '0.8'},
+  { color: '#DEAE1F', opacity: '0.5'},
+  { color: '#AAFF00', opacity: '0.5'}
+];
+
 const pages = [
   { title: 'Parameter', path: '/' },
   { title: 'About', path: '/about' },
@@ -17,7 +23,7 @@ const pages = [
 ]
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
-  const [currentBgColor, setCurrentBgColor] = useState('#807D74');
+  const [currentBgColor, setCurrentBgColor] = useState(bgColors[0]);
   const router = useRouter();
   const videoBg = useRef();
 
@@ -57,11 +63,11 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
                   <Component {...pageProps} />
                 </div>
                 <div className="base__meta">
-                  <Branding currentBgColor={currentBgColor} setCurrentBgColor={_setCurrentBgColor} />
+                  <Branding bgColors={bgColors} currentBgColor={currentBgColor.color} setCurrentBgColor={_setCurrentBgColor} />
                 </div>
               </div>
             </div>
-            <div style={{backgroundColor: currentBgColor}} className="base__video-blend-overlay"></div>
+            <div style={{backgroundColor: currentBgColor.color, opacity: currentBgColor.opacity}} className="base__video-blend-overlay"></div>
             <div className="base__video-bg">
               <video onCanPlayThrough={() => videoCanPlay()}  onCanPlay={() => videoCanPlay()} ref={videoBg} width="600" height="500" autoPlay loop muted>
                 <source src="video/production-ID_666.mp4" type="video/mp4" />
