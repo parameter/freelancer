@@ -1,5 +1,5 @@
 import { SessionProvider } from "next-auth/react";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import '../styles/globals.scss';
@@ -17,12 +17,17 @@ const pages = [
 ]
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
+  const [currentBgColor, setCurrentBgColor] = useState('#807D74');
   const router = useRouter();
   const videoBg = useRef();
 
   const videoCanPlay = () => {
     console.log(videoBg.current);
     videoBg.current.play();
+  }
+
+  const _setCurrentBgColor = (color) => {
+    setCurrentBgColor(color);
   }
 
   return <SessionProvider session={session}>
@@ -52,10 +57,11 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
                   <Component {...pageProps} />
                 </div>
                 <div className="base__meta">
-                  <Branding />
+                  <Branding currentBgColor={currentBgColor} setCurrentBgColor={_setCurrentBgColor} />
                 </div>
               </div>
             </div>
+            <div style={{backgroundColor: currentBgColor}} className="base__video-blend-overlay"></div>
             <div className="base__video-bg">
               <video onCanPlayThrough={() => videoCanPlay()}  onCanPlay={() => videoCanPlay()} ref={videoBg} width="600" height="500" autoPlay loop muted>
                 <source src="video/production-ID_666.mp4" type="video/mp4" />

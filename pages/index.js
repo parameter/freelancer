@@ -13,10 +13,14 @@ export default function Home() {
     setOpenJob(jobHandle);
   }
 
+  const closeModal = () => {
+    setOpenJob(null);
+  }
+
   const printModal = () => {
-    if (openJob !== null && openJob !== null) {
+    if (openJob !== null) {
       return <>
-        <div className="modal__bg"></div>
+        <div onClick={() => closeModal()} className="modal__bg"></div>
         <div className="modal modal__job">
           <h1 className="modal__job-title">{jobsJson.jobs[openJob].title}</h1>
           <div className="modal__job-main">
@@ -30,6 +34,14 @@ export default function Home() {
                 })}
               </ul>
             </div>
+          </div>
+          <div className="modal__job-links">
+            <h2 className="modal__job-subtitle">Around the net</h2>
+            <ul>
+              {jobsJson.jobs[openJob].links.map((link, index) => {
+                return <li key={index}><a href={link.href}>{link.title}</a></li>
+              })}
+            </ul>
           </div>
         </div>
       </>
@@ -47,6 +59,7 @@ export default function Home() {
       <div className="article__wrap article__post">
         <p>Recently I have been building a <a onClick={(event) => openModal(event)} className="article__pop-link" href="#bidstacker" title="Bidstacker">product</a> for a company I am developing with a collegue.</p>
         <p>We are more or less trying to revolutionize the supply chain for the construction market. Helping them to save time and money in a stressful environment.</p>
+        <p><a href="https://www.breakit.se/artikel/32593/klart-for-semifinal-har-ar-de-som-gar-vidare-i-shift-svart-att-valja">Bidstacker in shift</a></p>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-user"></div>
       </div>
       {printModal()}

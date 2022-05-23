@@ -1,6 +1,7 @@
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import React, { FC, useEffect, useState } from "react";
 
-const Branding = () => {
+const Branding = (props) => {
     const [isDragging, setIsDragging] = useState(false);
     const [mouseStartY, setMouseStartY] = useState(40);
     const [mouseCurrentY, setMouseCurrentY] = useState(40);
@@ -49,6 +50,17 @@ const Branding = () => {
         return y + 'px'
     }
 
+    const setBgColor = (color) => {
+        props.setCurrentBgColor(color);
+    }
+
+    const printColorDots = () => {
+        const colors = ['#807D74', '#DEAE1F', '#AAFF00'];
+        return colors.map((color) => {
+            return <div className={"base__branding-color-picker-dot" + (props.currentBgColor === color ? ' selected' : '')} onClick={() => setBgColor(color)} style={{backgroundColor: color}}></div>
+        })
+    }
+
     return (
       <div onMouseUp={end} onMouseLeave={end} className="base__branding">
         <div ref={circle} onMouseUp={end} onTouchEnd={end} onMouseMove={move} onTouchMove={move} className="base__branding-logo">
@@ -57,6 +69,9 @@ const Branding = () => {
             </div>
         </div>
         <h1>parameter</h1>
+        <div className="base__branding-color-picker">
+            {printColorDots()}
+        </div>
       </div>
     );
 };
