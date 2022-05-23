@@ -18,7 +18,7 @@ const bgColors = [
 
 const pages = [
   { title: 'Parameter', path: '/' },
-  { title: 'About', path: '/about' },
+  /* { title: 'About', path: '/about' }, */
   { title: 'Free NFT', path: '/free-nft' },
 ]
 
@@ -69,13 +69,20 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
             </div>
             <div style={{backgroundColor: currentBgColor.color, opacity: currentBgColor.opacity}} className="base__video-blend-overlay"></div>
             <div className="base__video-bg">
-              <video onCanPlayThrough={() => videoCanPlay()}  onCanPlay={() => videoCanPlay()} ref={videoBg} width="600" height="500" autoPlay loop muted>
-                <source src="video/production-ID_666.mp4" type="video/mp4" />
-                Your browser does not support the video element.
-              </video>
+              {process.browser === true && 
+                <video onCanPlayThrough={() => videoCanPlay()}  onCanPlay={() => videoCanPlay()} ref={videoBg} width="600" height="500" autoPlay loop muted>
+                  <source src={window.location.origin + '/video/production-ID_666.mp4'} type="video/mp4" />
+                  Your browser does not support the video element.
+                </video>
+              }
             </div>
+            <footer className="base__footer">
+              <ul>
+                <li><a href="/social-media">social media</a></li>
+              </ul>
+            </footer>
           </div>
-         </SessionProvider>
+        </SessionProvider>
 }
 
 export default App

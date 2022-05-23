@@ -7,7 +7,6 @@ export default function Home() {
   const [openJob, setOpenJob] = useState(null);
 
   const openModal = (event) => {
-    event.preventDefault();
 
     const jobHandle = event.target.href.split('#')[1];
     setOpenJob(jobHandle);
@@ -54,6 +53,7 @@ export default function Home() {
         <p>The idea here is to make it easier for &#123;the world&#125; to find me.</p>
         <p>I wanted to see what it would look like without intermediaries.</p>
         <p>Now, once we can see through the noise and the background radiation of the universe it&apos;s time to get some work done.</p>
+        <p>I am a developer based in Stockholm who likes electronic music &#123;insert_icon&#125; and discgolf &#123;insert_icon&#125;.</p>
         <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-user"></div>
       </div>
       <div className="article__wrap article__post">

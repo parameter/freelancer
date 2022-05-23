@@ -3,6 +3,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden auto;
+  box-sizing: border-box;
 }
 
 #__next {
@@ -60,6 +62,7 @@ html, body {
   &__page {
       width: 100%;
       min-height: 100%;
+      padding-bottom: 100px;
       /* background-color: #ad8202; */
       z-index: 20000;
   }
@@ -209,6 +212,41 @@ html, body {
         background-color: #fff;
     }
   }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 700;
+    padding: 7px 16px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsqC3pBAAE8gH8svJhZwAAAABJRU5ErkJggg==);
+    z-index: 10000000;
+    box-sizing: border-box;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            padding: 3px 10px;
+            border-radius: 10px;
+            background-color: #666;
+            margin: 0 0 0 16px;
+
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+  }
 }
 
 .article {
@@ -225,7 +263,14 @@ html, body {
             margin: 0 0 17px 0;
             max-width: 840px;
             color: #403A24;
-            line-height: 1.5em;
+            line-height: 1.5em; 
+
+            a {
+                font-family: 'typewriter';
+                font-weight: 400;
+                color: #9D00FF;
+                text-decoration: none;
+            }
         }
     }
 
@@ -233,6 +278,7 @@ html, body {
         margin: 0 0 22px 0;
         background-color: #FFFAEB;
         box-shadow: 2px 2px 2px rgb(0 0 0 / 12%);
+        min-height: 80px;
     }
 
     &__post-user {
@@ -248,10 +294,24 @@ html, body {
         background-size: cover;
     }
 
+    &__post-jobs {
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        left: -23px;
+        top: 22px;
+        border-radius: 40px;
+        background-color: #ddd;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
     &__pop-link {
         position: relative;
         color: #9D00FF;
-        font-weight: 600;
+        font-family: 'typewriter';
+        font-weight: 400;
         text-decoration: none;
         padding-bottom: 2px;
         padding-right: 37px;
@@ -365,6 +425,45 @@ html, body {
                     letter-spacing: 0.1em;
                 }
             }
+        }
+    }
+}
+
+.jobs-page {
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            margin: 0 0 23px 0;
+
+            a {
+                font-family: "c64";
+                letter-spacing: 0.046em;
+                font-size: 20px;
+                color: #574F33;
+                text-decoration: none;
+                padding: 4px 0;
+
+                &:hover {
+                    border-bottom: 3px solid #574F33;
+                }
+            }
+        }
+    }
+
+    &__back {
+        padding: 10px 0 16px 0;
+
+        a {
+            font-family: "c64";
+            letter-spacing: 0.046em;
+            font-size: 20px;
+            margin: 0 0 17px 0;
+            text-decoration: none;
+            color: #fff;
         }
     }
 }
