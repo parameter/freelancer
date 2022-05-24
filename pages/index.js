@@ -57,12 +57,12 @@ export default function Home() {
         <p>As I like to try new things I hosted this site on the peer-to-peer network Interplanetary file system (ipfs). It&apos;s not hosted on an ordinary server but a more decentralized method where the data is stored and retried from multiple nodes where all users share the burden of holding a bit of data for everyone else.</p>
         <p>By the way, there are 15 versions of this site, can you find them?</p>
         <p>Tweek the parameters!</p>
-        <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-user"></div>
+        <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-icon"></div>
       </div>
       <div className="article__wrap article__post">
         <p>Recently I have been building a <a onClick={(event) => openModal(event)} className="article__pop-link" href="#bidstacker" title="Bidstacker">product</a> for a company aiming to make a difference in the supply chain for the construction market - helping them to save time in a tight environment.</p>
         <p><a href="https://www.breakit.se/artikel/32593/klart-for-semifinal-har-ar-de-som-gar-vidare-i-shift-svart-att-valja">Bidstacker in the news</a></p>
-        <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-user"></div>
+        <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>
       {printModal()}
     </>

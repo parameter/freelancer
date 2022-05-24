@@ -21,7 +21,7 @@ export default function FreeNft() {
             <p>As we all know technology is the work of the devil and the latest things are of course NFTs and the blockchain.</p>
             <p>What better use of this new technology can we think of than actually signing a contract with the devil?</p>
             <p>Make your deal here and put it on the blockchain where it can never be altered.</p>
-            <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-user"></div>
+            <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-icon"></div>
         </div>
     </>
   );
