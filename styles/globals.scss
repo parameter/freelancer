@@ -190,6 +190,7 @@ html, body {
         flex: 0 0 100%;
         padding: 0;
         width: 100%;
+        max-height: 340px;
         order: 0;
       }
   }
@@ -200,6 +201,10 @@ html, body {
       margin: 40px 0 100px 0;
       justify-content: end;
       list-style: none;
+
+      @media (max-width: '1200px') {
+        margin: 60px 0 60px 0;
+      }
 
       li {
           margin: 0 30px 0 0;
@@ -315,6 +320,10 @@ html, body {
             max-width: 840px;
             color: #403A24;
             line-height: 1.5em; 
+
+            @media (max-width: '1200px') {
+                font-size: 16px;
+            }
 
             a {
                 font-family: 'typewriter';
