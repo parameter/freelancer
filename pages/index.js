@@ -54,11 +54,12 @@ export default function Home() {
         <p>I wanted to see what it would look like without intermediaries.</p>
         <p>Now, once we can see through the noise and the background radiation of the universe it&apos;s time to get some work done.</p>
         <p>I am a developer based in Stockholm who likes electronic music &#123;insert_icon&#125; and discgolf &#123;insert_icon&#125;.</p>
+        <p>I like to try new things so I hosted this site on the peer-to-peer network Interplanetary file system (ipfs). It's not hosted on an ordinary server but a more decentralized method where the data is stored and retried from multiple nodes where all users share the burden of holding a bit of data for everyone else.</p>
         <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-user"></div>
       </div>
       <div className="article__wrap article__post">
         <p>Recently I have been building a <a onClick={(event) => openModal(event)} className="article__pop-link" href="#bidstacker" title="Bidstacker">product</a> for a company I am developing with a collegue.</p>
-        <p>We are more or less trying to revolutionize the supply chain for the construction market. Helping them to save time and money in a stressful environment.</p>
+        <p>We are trying to make a difference in supply chain for the construction market. Helping them to save time and money in a stressful environment.</p>
         <p><a href="https://www.breakit.se/artikel/32593/klart-for-semifinal-har-ar-de-som-gar-vidare-i-shift-svart-att-valja">Bidstacker in shift</a></p>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-user"></div>
       </div>

@@ -24,7 +24,7 @@ export default function Jobs() {
         <div className="article__wrap jobs-page article__post">
             <ul className="jobs-page__list">
                 {Object.keys(jobsJson.jobs).map((index) => {
-                    return <li>
+                    return <li key={index}>
                         <Link href={'/jobs/' + jobsJson.jobs[index].title}>
                             <a>{jobsJson.jobs[index].title}</a>
                         </Link>
