@@ -3,9 +3,9 @@ import React, { FC, useEffect, useState } from "react";
 
 const Branding = (props) => {
     const [isDragging, setIsDragging] = useState(false);
-    const [parameterY, setParameterY] = useState(40);
-    const [mouseCurrentY, setMouseCurrentY] = useState(40);
-    const [handleY, setHandleY] = useState(50);
+    const [parameterY, setParameterY] = useState(55);
+    const [mouseCurrentY, setMouseCurrentY] = useState(55);
+    const [handleY, setHandleY] = useState(55);
     const [dist, setDist] = useState(0);
     const circle = React.createRef();
     const slider = React.createRef();
@@ -37,7 +37,6 @@ const Branding = (props) => {
         var rect = circle.current.getBoundingClientRect();
         var y = event.clientY - rect.top;
         setMouseCurrentY(y);
-        console.log(y);
         props.setParameterY(y);
     }
 

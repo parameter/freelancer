@@ -24,7 +24,7 @@ const pages = [
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
   const [currentBgColor, setCurrentBgColor] = useState(bgColors[0]);
-  const [parameterY, setParameterY] = useState(40);
+  const [parameterY, setParameterY] = useState(50);
   const router = useRouter();
   const videoBg = useRef();
 
@@ -38,19 +38,20 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
   }
 
   const parseBgBlendMode = (blend) => {
+    console.log(parameterY);
     if (parameterY < 30) {
       return 'color-burn';
     }
-    if (parameterY > 30 && parameterY < 50) {
-      return 'color-dodge';
+    if (parameterY > 30 && parameterY < 45) {
+      return 'hard-light';
     }
-    if (parameterY > 50 && parameterY < 70) {
+    if (parameterY > 44 && parameterY < 65) {
       return blend;
     }
-    if (parameterY > 70 && parameterY < 85) {
+    if (parameterY > 64 && parameterY < 77) {
       return 'lighten';
     }
-    if (parameterY > 85) {
+    if (parameterY > 76) {
       return 'exclusion';
     }
   }
@@ -86,6 +87,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
                 </div>
               </div>
             </div>
+            <div className="base__vignette"></div>
             <div style={{backgroundColor: currentBgColor.color, opacity: currentBgColor.opacity, mixBlendMode: parseBgBlendMode(currentBgColor.blend)}} className="base__video-blend-overlay"></div>
             <div className="base__video-bg">
               {process.browser === true && 
