@@ -58,7 +58,7 @@ export default function Home() {
         <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-user"></div>
       </div>
       <div className="article__wrap article__post">
-        <p>Recently I have been building a <a onClick={(event) => openModal(event)} className="article__pop-link" href="#bidstacker" title="Bidstacker">product</a> for a company aiming to make a difference in the supply chain for the construction market, helping them to save time and money in a stressful environment.</p>
+        <p>Recently I have been building a <a onClick={(event) => openModal(event)} className="article__pop-link" href="#bidstacker" title="Bidstacker">product</a> for a company aiming to make a difference in the supply chain for the construction market - helping them to save time in a tight environment.</p>
         <p><a href="https://www.breakit.se/artikel/32593/klart-for-semifinal-har-ar-de-som-gar-vidare-i-shift-svart-att-valja">Bidstacker in the news</a></p>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-user"></div>
       </div>
