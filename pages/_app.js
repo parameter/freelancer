@@ -24,6 +24,7 @@ const pages = [
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
   const [currentBgColor, setCurrentBgColor] = useState(bgColors[0]);
+  const [parameterY, setParameterY] = useState(40);
   const router = useRouter();
   const videoBg = useRef();
 
@@ -34,6 +35,24 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
 
   const _setCurrentBgColor = (color) => {
     setCurrentBgColor(color);
+  }
+
+  const parseBgBlendMode = (blend) => {
+    if (parameterY < 30) {
+      return 'color-burn';
+    }
+    if (parameterY > 30 && parameterY < 50) {
+      return 'color-dodge';
+    }
+    if (parameterY > 50 && parameterY < 70) {
+      return blend;
+    }
+    if (parameterY > 70 && parameterY < 85) {
+      return 'lighten';
+    }
+    if (parameterY > 85) {
+      return 'exclusion';
+    }
   }
 
   return <SessionProvider session={session}>
@@ -63,11 +82,11 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
                   <Component {...pageProps} />
                 </div>
                 <div className="base__meta">
-                  <Branding bgColors={bgColors} currentBgColor={currentBgColor.color} setCurrentBgColor={_setCurrentBgColor} />
+                  <Branding bgColors={bgColors} currentBgColor={currentBgColor.color} setCurrentBgColor={_setCurrentBgColor} setParameterY={setParameterY} />
                 </div>
               </div>
             </div>
-            <div style={{backgroundColor: currentBgColor.color, opacity: currentBgColor.opacity, 'mix-blend-mode': currentBgColor.blend}} className="base__video-blend-overlay"></div>
+            <div style={{backgroundColor: currentBgColor.color, opacity: currentBgColor.opacity, mixBlendMode: parseBgBlendMode(currentBgColor.blend)}} className="base__video-blend-overlay"></div>
             <div className="base__video-bg">
               {process.browser === true && 
                 <video onCanPlayThrough={() => videoCanPlay()}  onCanPlay={() => videoCanPlay()} ref={videoBg} width="600" height="500" autoPlay loop muted>

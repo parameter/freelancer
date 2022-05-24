@@ -3,7 +3,7 @@ import React, { FC, useEffect, useState } from "react";
 
 const Branding = (props) => {
     const [isDragging, setIsDragging] = useState(false);
-    const [mouseStartY, setMouseStartY] = useState(40);
+    const [parameterY, setParameterY] = useState(40);
     const [mouseCurrentY, setMouseCurrentY] = useState(40);
     const [handleY, setHandleY] = useState(50);
     const [dist, setDist] = useState(0);
@@ -22,7 +22,7 @@ const Branding = (props) => {
         var rect = circle.current.getBoundingClientRect();
         var y = event.clientY - rect.top;
 
-        setMouseStartY(y);
+        setParameterY(y);
     }
 
     const end = (event) => {
@@ -37,6 +37,8 @@ const Branding = (props) => {
         var rect = circle.current.getBoundingClientRect();
         var y = event.clientY - rect.top;
         setMouseCurrentY(y);
+        console.log(y);
+        props.setParameterY(y);
     }
 
     const calcHandlePos = () => {
