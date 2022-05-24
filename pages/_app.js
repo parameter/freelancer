@@ -11,9 +11,9 @@ const UseSession = ({ children }) => {
 }
 
 const bgColors = [
-  { color: '#807D74', opacity: '0.8'},
-  { color: '#DEAE1F', opacity: '0.5'},
-  { color: '#AAFF00', opacity: '0.5'}
+  { color: '#807D74', opacity: '0.95', blend: 'color', displayColor: '#807D74'},
+  { color: '#E0C572', opacity: '0.8', blend: 'hue', displayColor: '#FFBF00'},
+  { color: '#AAFF00', opacity: '0.6', blend: 'hue', displayColor: '#A4ED11'}
 ];
 
 const pages = [
@@ -67,7 +67,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
                 </div>
               </div>
             </div>
-            <div style={{backgroundColor: currentBgColor.color, opacity: currentBgColor.opacity}} className="base__video-blend-overlay"></div>
+            <div style={{backgroundColor: currentBgColor.color, opacity: currentBgColor.opacity, 'mix-blend-mode': currentBgColor.blend}} className="base__video-blend-overlay"></div>
             <div className="base__video-bg">
               {process.browser === true && 
                 <video onCanPlayThrough={() => videoCanPlay()}  onCanPlay={() => videoCanPlay()} ref={videoBg} width="600" height="500" autoPlay loop muted>

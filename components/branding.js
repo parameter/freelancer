@@ -56,7 +56,7 @@ const Branding = (props) => {
 
     const printColorDots = () => {
         return props.bgColors.map((color) => {
-            return <div key={color.color} className={"base__branding-color-picker-dot" + (props.currentBgColor === color.color ? ' selected' : '')} onClick={() => setBgColor(color)} style={{backgroundColor: color.color}}></div>
+            return <div key={color.color} className={"base__branding-color-picker-dot" + (props.currentBgColor === color.color ? ' selected' : '')} onClick={() => setBgColor(color)} style={{backgroundColor: color.displayColor}}></div>
         })
     }
 
