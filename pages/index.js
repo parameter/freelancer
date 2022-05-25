@@ -52,10 +52,10 @@ export default function Home() {
       <div className="article__wrap article__post">
         <p>The idea here is to make it easier for &#123;the world&#125; to find me.</p>
         <p>I wanted to see what it would look like without intermediaries.</p>
-        <p>Now, once we can see through the noise and the background radiation of the universe it&apos;s time to get some work done.</p>
+        <p>Now, once we can see through the noise and the background radiation of the universe it&apos;s time to get some work&nbsp;done.</p>
         <p>I am a developer based in Stockholm who likes electronic music &#123;insert_icon&#125; and discgolf &#123;insert_icon&#125;.</p>
-        <p>As I like to try new things I hosted this site on the peer-to-peer network Interplanetary file system (ipfs). It&apos;s not hosted on an ordinary server but a more decentralized method where the data is stored and retried from multiple nodes where all users share the burden of holding a bit of data for everyone else.</p>
-        <p>By the way, there are 15 versions of this site, can you find them?</p>
+        <p>As I like to try new things I hosted this site on the peer-to-peer network Interplanetary file system (ipfs). It&apos;s not hosted on an ordinary server but a more decentralized method where the data is stored and retried from multiple nodes where all users share the burden of holding a bit of data for everyone&nbsp;else.</p>
+        <p>By the way, there are 15 variations of this sites graphical theme, can you find&nbsp;them?</p>
         <p>Tweek the parameters!</p>
         <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-icon"></div>
       </div>
