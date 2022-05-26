@@ -99,7 +99,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
             </div>
             <footer className="base__footer">
               <ul>
-                <li><a href="/social-media">social media</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/p%C3%A4r-henriksson-80b99b1b/" title="Linkedin - Pär Henriksson">linkedin</a></li>
               </ul>
             </footer>
           </div>

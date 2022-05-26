@@ -375,7 +375,7 @@ html, body {
             a {
                 font-family: 'typewriter';
                 font-weight: 400;
-                color: #9D00FF;
+                color: #7e00cc;
                 text-decoration: none;
             }
         }
@@ -433,16 +433,16 @@ html, body {
         font-weight: 400;
         text-decoration: none;
         padding-bottom: 2px;
-        padding-right: 37px;
+        padding-right: 34px;
 
         &:after {
             content: "";
             position: absolute;
-            width: 32px;
-            height: 32px;
+            width: 26px;
+            height: 26px;
             right: 0;
-            top: -2px;
-            background-image: url(/icons/icons8-open-64.png);
+            top: 2px;
+            background-image: url(/icons/icons8-open-64-2.png);
             background-size: 100% auto;
         }
     }
@@ -459,6 +459,35 @@ html, body {
     border-left: 22px solid #807D74;
     padding: 30px;
     z-index: 200;
+
+    &__main {
+        position: relative;
+        z-index: 100;
+    }
+
+    &__contact:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: 80%;
+        background: url(/images/me.png);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        z-index: 1;
+    }
+    
+    p {
+        letter-spacing: 0.026em;
+
+        a {
+            font-family: 'typewriter';
+            font-weight: 400;
+            color: #7e00cc;
+            text-decoration: none;
+        }
+    }
 
     &__bg {
         position: fixed;
@@ -502,11 +531,36 @@ html, body {
         padding-right: 44px;
 
         p {
-            line-height: 1.5em;
+            line-height: 1.66em;
             color: #403A24;
             font-family: "monospace_";
             font-size: 18px;
             font-weight: 400;
+
+            span {
+                white-space: nowrap;
+                display: flex;
+            }
+        }
+    }
+
+    &__job-desc-clipboard {
+        margin-left: 10px;
+        cursor: crosshair;
+
+        &:hover .modal__job-desc-clipboard-feedback {
+            visibility: visible;
+        }
+    }
+
+    &__job-desc-clipboard-feedback {
+        margin-left: 10px;
+        visibility: hidden;
+        display: block!important;
+        font-size: 15px;
+
+        &.copied {
+            visibility: visible;
         }
     }
 
