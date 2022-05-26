@@ -63,7 +63,7 @@ export default function Home() {
               <div className="modal__job-desc">
                 <p>If you prefer to write me an email <br />
                   <span>
-                    <a href="mailto:parameter64@proton.me">parameter64@proton.me</a>
+                    <a className="modal__job-desc-mailto" href="mailto:parameter64@proton.me">parameter64@proton.me</a>
                     <span onClick={() => copyToClipboard('parameter64@proton.me')} title="Copy to clipboad" className="modal__job-desc-clipboard">
                       <img width="32" height="32" src="icons/clipboard.png" alt="copy to clipboard" />
                       <span className={emailCopied === false ? 'modal__job-desc-clipboard-feedback' : 'modal__job-desc-clipboard-feedback copied'}>
