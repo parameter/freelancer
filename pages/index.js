@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import jobsJson from '../app-data/jobs.js';
 
 export default function Home() {
@@ -66,7 +65,7 @@ export default function Home() {
                   <span>
                     <a href="mailto:parameter64@proton.me">parameter64@proton.me</a>
                     <span onClick={() => copyToClipboard('parameter64@proton.me')} title="Copy to clipboad" className="modal__job-desc-clipboard">
-                    <Image src='/icons/clipboard.png' alt='copy to clipboard' width={32} height={32} />
+                      <img width="32" height="32" src="icons/clipboard.png" alt="copy to clipboard" />
                       <span className={emailCopied === false ? 'modal__job-desc-clipboard-feedback' : 'modal__job-desc-clipboard-feedback copied'}>
                         {emailCopied === false ? 'Copy to clipboard' : 'Email address copied to clipbard'}
                       </span>
