@@ -152,6 +152,23 @@ export default function Home() {
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>
+      <div className="article__wrap article__post">
+        <p>While working for the academedia cooperation I built their schools a way to build forms for collecting leads. I made so that they could be configured to post to a few different CRM and made sure the rendered frontend was accessible and GDPR compliant.</p>
+        <p>The job was part of a bigger job I helped plan and execute where we built a super-theme for wordpress for quickly launching new sites. The form-builder was built using react and was hosted on an admin page powered by a plugin.</p>
+        <ul className="article__links article__links--tech">
+          <li>reactjs</li>
+          <li>PHP</li>
+          <li>Wordpress</li>
+          <li>Javascript</li>
+          <li>API</li>
+          <li>frontend</li>
+          <li>accessibility</li>
+        </ul>
+        <ul className="article__links">
+          <li></li>
+        </ul>
+        <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
+      </div>
       {printContactModal()}
       {printJobModal()}
     </>
