@@ -70,7 +70,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
               <div className="base__content">
                 <div className="base__bread">
                   <ul className="base__nav">
-                    <li><Link href="/"><a className="base__nav-home" href="/" title="parameter64 home"><Image width="54" height="54" src="/icons/house.png" alt="parameter64 home" /></a></Link></li>
+                    <li><Link href="/"><a className="base__nav-home" title="parameter64 home"><Image width="54" height="54" src="/icons/house.png" alt="parameter64 home" /></a></Link></li>
                     {pages.map((item, index) => {
                       return (
                         <li key={index}>
