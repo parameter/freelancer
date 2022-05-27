@@ -68,7 +68,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
               <div className="base__content">
                 <div className="base__bread">
                   <ul className="base__nav">
-                    <li><Link href="/"><a className="base__nav-home" title="parameter64 home">&nbsp;</a></Link></li>
+                    <li><Link href="/"><a className={router.pathname === '/' ? 'base__nav-home current-path' : 'base__nav-home' } title='parameter64 home'>&nbsp;</a></Link></li>
                     {pages.map((item, index) => {
                       return (
                         <li key={index}>

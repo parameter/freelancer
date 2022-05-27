@@ -72,6 +72,7 @@ html, body {
     transition-duration: 2s;
 
     &:hover {
+        background-image: url("/icons/house-inverted.png");
         border-top: 0px solid transparent!important;
     
         -webkit-animation-name: rotate; 
@@ -86,6 +87,11 @@ html, body {
         animation-duration: 3s; 
         animation-iteration-count: infinite;
         animation-timing-function: linear;
+      }
+
+      &.current-path {
+        background-image: url("/icons/house-inverted.png");
+        border-bottom: 0px solid transparent!important;
       }
 
   }
