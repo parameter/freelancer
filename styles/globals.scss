@@ -31,7 +31,20 @@ html, body {
     src: url(/fonts/monospace/monospace-typewriter.ttf);
 }
 
+@-webkit-keyframes rotate {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
 
+@-moz-keyframes rotate {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
 
 .base {
   display: flex;
@@ -42,7 +55,40 @@ html, body {
   background: linear-gradient(270deg, #e5f888 0%, #ae6302 100%);
 
   &__nav-home {
+    position: relative;
+    display: block;
     transform: translateY(-10px);
+    
+
+    img {
+        transform-origin: 50% 50%;
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 2s;
+        -moz-transition-property: -moz-transform;
+        -moz-transition-duration: 2s;
+        transition-property: transform;
+        transition-duration: 2s;
+    }
+
+    &:hover {
+        border-top: 0px solid transparent!important;
+    }
+
+    &:hover img {
+
+        -webkit-animation-name: rotate; 
+        -webkit-animation-duration: 3s; 
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-name: rotate; 
+        -moz-animation-duration: 3s; 
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+        animation-name: rotate; 
+        animation-duration: 3s; 
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
   }
 
   &__video-blend-overlay {
@@ -257,6 +303,14 @@ html, body {
               &.current-path {
                   border-bottom: 2px solid #FFFAEB;
               }
+
+              &:hover {
+                 border-top: 2px solid #FFFAEB;
+              }
+
+              &.current-path:hover {
+                border-top: 2px solid transparent;
+             }
           }
       }
   }

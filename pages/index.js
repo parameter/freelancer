@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import jobsJson from '../app-data/jobs.js';
 
 export default function Home() {
@@ -71,7 +72,7 @@ export default function Home() {
                   <span>
                     <a className="modal__job-desc-mailto" href="mailto:parameter64@proton.me">parameter64@proton.me</a>
                     <span onClick={() => copyToClipboard('parameter64@proton.me', 'email')} title="Copy to clipboad" className="modal__job-desc-clipboard">
-                      <img width="32" height="32" src="icons/clipboard.png" alt="copy to clipboard" />
+                      <Image width="32" height="32" src="icons/clipboard.png" alt="copy to clipboard" />
                       <span className={emailCopied === false ? 'modal__job-desc-clipboard-feedback' : 'modal__job-desc-clipboard-feedback copied'}>
                         {emailCopied === false ? 'Copy to clipboard' : 'Email address copied to clipboard'}
                       </span>
@@ -81,7 +82,7 @@ export default function Home() {
                   <span>
                     <a href="tel:+46738790924">+46 73 87 909 24</a>
                     <span onClick={() => copyToClipboard('0046738790924', 'telephone')} title="Copy to clipboad" className="modal__job-desc-clipboard">
-                      <img width="32" height="32" src="icons/clipboard.png" alt="copy to clipboard" />
+                      <Image width="32" height="32" src="icons/clipboard.png" alt="copy to clipboard" />
                       <span className={telephoneCopied === false ? 'modal__job-desc-clipboard-feedback' : 'modal__job-desc-clipboard-feedback copied'}>
                         {telephoneCopied === false ? 'Copy to clipboard' : 'Telephone number copied to clipboard'}
                       </span>
@@ -113,7 +114,7 @@ export default function Home() {
         <p>I wanted to see what it would look like without intermediaries.</p>
         <p>Now, once we can see through the noise and the background radiation of the universe it&apos;s time to get some work&nbsp;done.</p>
         <p>I am a developer based in Stockholm who likes electronic music &#123;insert_icon&#125; and discgolf &#123;insert_icon&#125;.</p>
-        <p>As I like to try new things I hosted this site on the peer-to-peer network Interplanetary file system (ipfs). It&apos;s not hosted on an ordinary server but a more decentralized method where the data is stored and retried from multiple nodes where all users share the burden of holding a bit of data for everyone&nbsp;else.</p>
+        <p>As I like to try new things I hosted this site on the peer-to-peer network Interplanetary file system (ipfs). It&apos;s not hosted on an ordinary server but a more decentralized method where the data is stored and retrieved from multiple nodes where all users share the burden of holding a bit of data for everyone&nbsp;else.</p>
         <p>By the way, there are 15 variations of this sites graphical theme, can you find&nbsp;them?</p>
         <p>Tweek the parameters!</p>
         <ul className="article__links article__links--tech">
