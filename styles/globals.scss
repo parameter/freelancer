@@ -57,25 +57,23 @@ html, body {
   &__nav-home {
     position: relative;
     display: block;
-    transform: translateY(-10px);
-    
+    background-image: url("/icons/house.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 54px; 
+    height: 54px;
 
-    img {
-        transform-origin: 50% 50%;
-        -webkit-transition-property: -webkit-transform;
-        -webkit-transition-duration: 2s;
-        -moz-transition-property: -moz-transform;
-        -moz-transition-duration: 2s;
-        transition-property: transform;
-        transition-duration: 2s;
-    }
+    transform-origin: 50% 50%;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 2s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 2s;
+    transition-property: transform;
+    transition-duration: 2s;
 
     &:hover {
         border-top: 0px solid transparent!important;
-    }
-
-    &:hover img {
-
+    
         -webkit-animation-name: rotate; 
         -webkit-animation-duration: 3s; 
         -webkit-animation-iteration-count: infinite;
@@ -88,7 +86,8 @@ html, body {
         animation-duration: 3s; 
         animation-iteration-count: infinite;
         animation-timing-function: linear;
-    }
+      }
+
   }
 
   &__video-blend-overlay {
@@ -249,6 +248,7 @@ html, body {
   &__nav {
       display: flex;
       flex-direction: row;
+      align-items: center;
       margin: 70px 0 70px 0;
       padding: 0;
       justify-content: end;
@@ -301,15 +301,15 @@ html, body {
               }
 
               &.current-path {
-                  border-bottom: 2px solid #FFFAEB;
+                  border-bottom: 3px solid #403A24;
               }
 
               &:hover {
-                 border-top: 2px solid #FFFAEB;
+                 border-top: 3px solid #FFFAEB;
               }
 
               &.current-path:hover {
-                border-top: 2px solid transparent;
+                border-top: 3px solid transparent;
              }
           }
       }
@@ -584,6 +584,14 @@ html, body {
     padding: 30px;
     box-sizing: border-box;
     z-index: 200;
+
+    &__clipboard-icon {
+        width: 32px;
+        height: 32px;
+        background-image: url("/icons/clipboard.png");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+      }
 
     @media (max-width: '720px') {
         width: 100%;

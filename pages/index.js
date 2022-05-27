@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import jobsJson from '../app-data/jobs.js';
 
 export default function Home() {
@@ -72,7 +71,7 @@ export default function Home() {
                   <span>
                     <a className="modal__job-desc-mailto" href="mailto:parameter64@proton.me">parameter64@proton.me</a>
                     <span onClick={() => copyToClipboard('parameter64@proton.me', 'email')} title="Copy to clipboad" className="modal__job-desc-clipboard">
-                      <Image width="32" height="32" src="icons/clipboard.png" alt="copy to clipboard" />
+                      <div className="modal__clipboard-icon">&nbsp;</div>
                       <span className={emailCopied === false ? 'modal__job-desc-clipboard-feedback' : 'modal__job-desc-clipboard-feedback copied'}>
                         {emailCopied === false ? 'Copy to clipboard' : 'Email address copied to clipboard'}
                       </span>
@@ -82,7 +81,7 @@ export default function Home() {
                   <span>
                     <a href="tel:+46738790924">+46 73 87 909 24</a>
                     <span onClick={() => copyToClipboard('0046738790924', 'telephone')} title="Copy to clipboad" className="modal__job-desc-clipboard">
-                      <Image width="32" height="32" src="icons/clipboard.png" alt="copy to clipboard" />
+                      <div className="modal__clipboard-icon">&nbsp;</div>
                       <span className={telephoneCopied === false ? 'modal__job-desc-clipboard-feedback' : 'modal__job-desc-clipboard-feedback copied'}>
                         {telephoneCopied === false ? 'Copy to clipboard' : 'Telephone number copied to clipboard'}
                       </span>

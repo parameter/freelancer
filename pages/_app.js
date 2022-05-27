@@ -1,5 +1,4 @@
 import { SessionProvider } from "next-auth/react";
-import Image from 'next/image';
 import Head from 'next/head';
 import { useRef, useState } from 'react';
 import Link from 'next/link'
@@ -69,7 +68,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
               <div className="base__content">
                 <div className="base__bread">
                   <ul className="base__nav">
-                    <li><Link href="/"><a className="base__nav-home" title="parameter64 home"><Image width="54" height="54" src="/icons/house.png" alt="parameter64 home" /></a></Link></li>
+                    <li><Link href="/"><a className="base__nav-home" title="parameter64 home">&nbsp;</a></Link></li>
                     {pages.map((item, index) => {
                       return (
                         <li key={index}>
