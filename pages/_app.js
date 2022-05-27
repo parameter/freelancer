@@ -19,9 +19,8 @@ const bgColors = [
 ];
 
 const pages = [
-  { title: 'Parameter', path: '/' },
-  /* { title: 'About', path: '/about' }, */
-  { title: 'Free NFT', path: '/free-nft' },
+  { title: 'About', path: '/about' },
+  { title: 'Parameter64', path: '/parameter64' },
 ]
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
