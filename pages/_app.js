@@ -38,7 +38,6 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
   }
 
   const parseBgBlendMode = (blend) => {
-    console.log(parameterY);
     if (parameterY < 30) {
       return 'color-burn';
     }

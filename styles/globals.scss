@@ -5,6 +5,8 @@ html, body {
   padding: 0;
   overflow: hidden auto;
   box-sizing: border-box;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -15,10 +17,6 @@ html, body {
 ::selection {
     color: #fff;
     background: #000;
-}
-
-#__next {
-  height: 100%;
 }
 
 @font-face {
@@ -344,7 +342,7 @@ html, body {
 
     &__wrap {
         position: relative;
-        padding: 35px 30px 15px 65px;
+        padding: 35px 30px 25px 65px;
         background: #fff;
 
         @media (max-width: '600px') {
@@ -359,7 +357,7 @@ html, body {
             font-family: "monospace_";
             letter-spacing: 0.046em;
             font-size: 20px;
-            margin: 0 0 17px 0;
+            margin: 0 0 27px 0;
             max-width: 840px;
             color: #403A24;
             line-height: 1.5em; 
@@ -412,7 +410,67 @@ html, body {
             left: -22px;
         }
     }
+     
+    &__links {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        list-style: none;
+        margin: 0 0 20px 0;
+        padding: 0;
 
+        li {
+            font-family: "typewriter";
+            font-weight: 400;
+            margin: 0 15px 11px 0;
+
+            a {
+                text-decoration: none;
+                color: #403A24;
+                border-bottom: 1px solid #403A24;
+
+                &:hover {
+                    font-weight: 600;
+                    border-bottom: 2px solid #403A24;
+                }
+            }
+        }
+
+        &--tech {
+
+            li {
+                font-family: "c64";
+                font-weight: 200;
+                color: #403A24;
+                margin: 0 23px 11px 0;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+
+                @media (max-width: '1200px') {
+                    font-size: 12px;
+                }
+
+                @media (max-width: '450px') {
+                    font-size: 10px;
+                }
+            }
+
+            &:before {
+                content: '»';
+                position: absolute;
+                left: - 22px;
+                top: -4px;
+                width: 22px;
+                height: 22px;
+                line-height: 1em;
+                font-family: "monospace_";
+                
+            }
+        }
+    }
+     
     &__post-jobs {
         position: absolute;
         width: 52px;
@@ -435,6 +493,14 @@ html, body {
         padding-bottom: 2px;
         padding-right: 34px;
 
+        &:hover {
+            border-bottom: 2px solid #9D00FF;
+
+            &:after {
+                top: -1px;
+            }
+        }
+
         &:after {
             content: "";
             position: absolute;
@@ -444,6 +510,7 @@ html, body {
             top: 2px;
             background-image: url(/icons/icons8-open-64-2.png);
             background-size: 100% auto;
+            transition: top 0.05s linear;
         }
     }
 }
@@ -453,7 +520,7 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 720px;
+    width: 780px;
     height: 440px;
     background-color: #fff;
     border-left: 22px solid #807D74;
@@ -538,7 +605,7 @@ html, body {
         width: 100%;
 
         p {
-            line-height: 1.66em;
+            line-height: 2em;
             color: #403A24;
             font-family: "monospace_";
             font-size: 18px;
@@ -580,6 +647,9 @@ html, body {
     }
 
     &__job-desc-clipboard-feedback {
+        background-color: #fff;
+        padding: 0 8px 0 4px;
+        border-radius: 4px;
         margin-left: 10px;
         visibility: hidden;
         display: block!important;
@@ -587,9 +657,6 @@ html, body {
 
         &.copied {
             visibility: visible;
-            padding: 0 4px;
-            border-radius: 4px;
-            background-color: #fff;
         }
 
         @media (max-width: '720px') {

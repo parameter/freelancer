@@ -19,7 +19,7 @@ const Branding = (props) => {
         setDist(0);
         slider.current.classList.add('active');
         
-        if (event.touches[0].clientY) {
+        if (event.touches) {
             return;
         } else {
             var rect = circle.current.getBoundingClientRect();
@@ -36,11 +36,20 @@ const Branding = (props) => {
     }
 
     const move = (event) => {
-        var touch = event.touches[0] || event.changedTouches[0];
-        var realTarget = document.elementFromPoint(touch.clientX, touch.clientY);
-        var offsetX = touch.clientX-realTarget.getBoundingClientRect().x;
-        var offsetY = touch.clientY-realTarget.getBoundingClientRect().y
-        props.setParameterY(offsetY);
+        if (!isDragging) { return; }
+
+        if (event.touches) {
+            var touch = event.touches[0] || event.changedTouches[0];
+            var realTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+            var offsetX = touch.clientX-realTarget.getBoundingClientRect().x;
+            var offsetY = touch.clientY-realTarget.getBoundingClientRect().y;
+            props.setParameterY(offsetY);
+        } else {
+            var rect = circle.current.getBoundingClientRect();
+            var y = event.clientY - rect.top;
+            setMouseCurrentY(y);
+            props.setParameterY(y);
+        }
     }
 
     const calcHandlePos = () => {
@@ -66,9 +75,9 @@ const Branding = (props) => {
 
     return (
       <div onMouseUp={end} onMouseLeave={end} className="base__branding">
-        <div ref={circle} onMouseUp={end} onTouchEnd={end} onMouseMove={move} onTouchMove={move} className="base__branding-logo">
+        <div ref={circle} onMouseLeave={end} onMouseUp={end} onTouchEnd={end} onMouseMove={move} onTouchMove={move} className="base__branding-logo">
             <div className="base__branding-logo-slider">
-                <div onTouchMove={move} onMouseDown={start} onTouchStart={start} style={{top: calcHandlePos()}} ref={slider} draggable className="base__branding-logo-slider-handle"></div>
+                <div onMouseDown={start} onTouchStart={start} onMouseUp={end} onMouseLeave={end} style={{top: calcHandlePos()}} ref={slider} className="base__branding-logo-slider-handle"></div>
             </div>
         </div>
         <h1>parameter</h1>
