@@ -148,13 +148,14 @@ export default function Home() {
           <li>CURL</li>
         </ul>
         <ul className="article__links">
-          <li><a href="https://www.trupayers.com/">trupayers.com</a></li>
+          <li><a target="_blank" href="https://www.trupayers.com/">trupayers.com</a></li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>
       <div className="article__wrap article__post">
         <p>While working for the academedia cooperation I built their schools a way to build forms for collecting leads. I made so that they could be configured to post to a few different CRM and made sure the rendered frontend was accessible and GDPR compliant.</p>
-        <p>The job was part of a bigger job I helped plan and execute where we built a super-theme for wordpress for quickly launching new sites. The form-builder was built using react and was hosted on an admin page powered by a plugin.</p>
+        <p>The job was part of a bigger job I helped plan and execute where we built a super-theme for wordpress for quickly launching new sites. The form-builder was built using react and hosted on an admin page powered by a plugin.</p>
+        <p>Apart from developing we also maintained alot of old sites we took home to our new inhouse dev-apartment but the first new one I built for them and that also became the prototype for the above mentioned WP-theme was praktiska.se</p>
         <ul className="article__links article__links--tech">
           <li>reactjs</li>
           <li>PHP</li>
@@ -165,7 +166,7 @@ export default function Home() {
           <li>accessibility</li>
         </ul>
         <ul className="article__links">
-          <li></li>
+          <li><a target="_blank" href="https://praktiska.se/">praktiska.se</a></li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>

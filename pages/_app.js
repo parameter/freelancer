@@ -58,6 +58,8 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
 
   return <SessionProvider session={session}>
            <Head>
+             <title>parameter64 - Freelancing web developer based in stockholm</title>
+             <meta name="description" content="Freelancing web developer based in stockholm. LIkes to work with modern frontend like reactjs and nextjs but has done alot of wordpress"/>
              <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
              <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
              <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
@@ -67,6 +69,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
               <div className="base__content">
                 <div className="base__bread">
                   <ul className="base__nav">
+                    <li><Link href="/"><a href="" title="parameter64 home"><img className="base__nav-home" width="54" height="54" src="icons/house.png" alt="parameter64 home" /></a></Link></li>
                     {pages.map((item, index) => {
                       return (
                         <li key={index}>
