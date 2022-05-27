@@ -148,7 +148,7 @@ export default function Home() {
           <li>CURL</li>
         </ul>
         <ul className="article__links">
-          <li><a target="_blank" href="https://www.trupayers.com/">trupayers.com</a></li>
+          <li><a target="_blank" rel="noreferrer" href="https://www.trupayers.com/">trupayers.com</a></li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>
@@ -166,7 +166,7 @@ export default function Home() {
           <li>accessibility</li>
         </ul>
         <ul className="article__links">
-          <li><a target="_blank" href="https://praktiska.se/">praktiska.se</a></li>
+          <li><a target="_blank" rel="noreferrer" href="https://praktiska.se/">praktiska.se</a></li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>
