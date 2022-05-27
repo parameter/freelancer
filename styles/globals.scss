@@ -6,6 +6,7 @@ html, body {
   box-sizing: border-box;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  overflow-y: scroll
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -31,19 +32,54 @@ html, body {
     src: url(/fonts/monospace/monospace-typewriter.ttf);
 }
 
-@-webkit-keyframes rotate {
+@-webkit-keyframes rotateIn {
     from {-webkit-transform: rotate(0deg);}
     to {-webkit-transform: rotate(360deg);}
 }
-
-@-moz-keyframes rotate {
+@-moz-keyframes rotateIn {
     from {-moz-transform: rotate(0deg);}
     to {-moz-transform: rotate(360deg);}
 }
-
-@keyframes rotate {
+@keyframes rotateIn {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes rotateOut {
+    0%   {
+        transform: rotate(180deg)  scale(1);
+    }
+    50%  {
+        transform: rotate(90deg)  scale(0.5);
+    }
+    80% {
+        transform: rotate(0deg)  scale(1);
+    }
+    100% {
+        transform: rotate(0deg)  scale(1);
+    }
+}
+@-moz-keyframes rotateOut {
+    0%   {
+        transform: rotate(180deg)  scale(1);
+    }
+    50%  {
+        transform: rotate(90deg)  scale(0.5);
+    }
+    100% {
+        transform: rotate(0deg)  scale(1);
+    }
+}
+@keyframes rotateOut {
+    0%   {
+        transform: rotate(180deg)  scale(1);
+    }
+    50%  {
+        transform: rotate(90deg)  scale(0.5);
+    }
+    100% {
+        transform: rotate(0deg)  scale(1);
+    }
 }
 
 .base {
@@ -62,6 +98,21 @@ html, body {
     background-repeat: no-repeat;
     width: 54px; 
     height: 54px;
+    transform: rotate(0deg);
+    transition: all 1s;
+
+    -webkit-animation-name: rotateOut; 
+    -webkit-animation-duration: 0.2s; 
+    
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotateOut; 
+    -moz-animation-duration: 0.2s; 
+    
+    -moz-animation-timing-function: linear;
+    animation-name: rotateOut; 
+    animation-duration: 0.2s; 
+    
+    animation-timing-function: linear;
 
     transform-origin: 50% 50%;
     -webkit-transition-property: -webkit-transform;
@@ -72,19 +123,23 @@ html, body {
     transition-duration: 2s;
 
     &:hover {
+        border-top: 0px solid transparent!important;
+      }
+
+    &:not(.current-path):hover {
         background-image: url("/icons/house-inverted.png");
         border-top: 0px solid transparent!important;
     
-        -webkit-animation-name: rotate; 
-        -webkit-animation-duration: 3s; 
+        -webkit-animation-name: rotateIn; 
+        -webkit-animation-duration: 4s; 
         -webkit-animation-iteration-count: infinite;
         -webkit-animation-timing-function: linear;
-        -moz-animation-name: rotate; 
-        -moz-animation-duration: 3s; 
+        -moz-animation-name: rotateIn; 
+        -moz-animation-duration: 4s; 
         -moz-animation-iteration-count: infinite;
         -moz-animation-timing-function: linear;
-        animation-name: rotate; 
-        animation-duration: 3s; 
+        animation-name: rotateIn; 
+        animation-duration: 4s; 
         animation-iteration-count: infinite;
         animation-timing-function: linear;
       }
