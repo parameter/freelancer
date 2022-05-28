@@ -5,12 +5,12 @@ const nextConfig = {
       { dev, dir, outDir, distDir, buildId }
     ) {
       return {
-        '/': { page: '/' }
+        '/': { page: '/' },
+        '/about': { page: '/about' }
       }
   },
   reactStrictMode: true,
   trailingSlash: false
 }
-
 
 module.exports = nextConfig;
