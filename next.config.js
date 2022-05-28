@@ -10,7 +10,7 @@ const nextConfig = {
       }
   },
   reactStrictMode: true,
-  trailingSlash: false
+  trailingSlash: true
 }
 
 module.exports = nextConfig;
