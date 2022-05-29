@@ -25,8 +25,8 @@ export default function Home() {
           <h1 className="modal__job-title">{jobsJson.jobs[openJob].title}</h1>
           <div className="modal__job-main">
             <div className="modal__desc modal__job-desc">
-              {jobsJson.jobs[openJob].desc.map((string) => {
-                return <p>{string}</p>
+              {jobsJson.jobs[openJob].desc.map((string, index) => {
+                return <p key={index}>{string}</p>
               })}
             </div>
             <div className="modal__job-techlist">
