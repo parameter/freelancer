@@ -19,7 +19,7 @@ export default function Jobs() {
     <>
         <div className="article__wrap article__post">
             <p>Here are a few curated events. A few cases from history.</p>
-            <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-icon"></div>
+            <div style={{backgroundImage: 'url(/images/me.webp)'}} className="article__post-icon"></div>
         </div>
         <div className="article__wrap jobs-page article__post">
             <ul className="jobs-page__list">

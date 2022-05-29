@@ -24,8 +24,10 @@ export default function Home() {
         <div className="modal modal__job">
           <h1 className="modal__job-title">{jobsJson.jobs[openJob].title}</h1>
           <div className="modal__job-main">
-            <div className="modal__job-desc">
-              <p>{jobsJson.jobs[openJob].desc}</p>
+            <div className="modal__desc modal__job-desc">
+              {jobsJson.jobs[openJob].desc.map((string) => {
+                return <p>{string}</p>
+              })}
             </div>
             <div className="modal__job-techlist">
               <ul>
@@ -66,7 +68,7 @@ export default function Home() {
           <div className="modal__main">
             <h1 className="modal__job-title">Get in touch!</h1>
             <div className="modal__job-main">
-              <div className="modal__job-desc">
+              <div className="modal__desc modal__contact-desc">
                 <p>If you prefer to write me an email <br />
                   <span>
                     <a className="modal__job-desc-mailto" href="mailto:parameter64@proton.me">parameter64@proton.me</a>
@@ -122,7 +124,7 @@ export default function Home() {
           <li>ipfs</li>
           <li>portfolio</li>
         </ul>
-        <div style={{backgroundImage: 'url(images/me.webp)'}} className="article__post-icon"></div>
+        <div style={{backgroundImage: 'url(/images/me.webp)'}} className="article__post-icon"></div>
       </div>
       <div className="article__wrap article__post">
         <p>Recently I have been developing a <a onClick={(event) => openJobModal(event)} className="article__pop-link" href="#bidstacker" title="Bidstacker">product</a> aiming to make a difference in the supply chain for the construction market - helping them to save time in a tight environment.</p>
@@ -133,13 +135,16 @@ export default function Home() {
           <li>css/bem</li>
         </ul>
         <ul className="article__links">
-          <li><a href="https://www.breakit.se/artikel/32593/klart-for-semifinal-har-ar-de-som-gar-vidare-i-shift-svart-att-valja">breakit.se</a></li>
+          <li>
+            <h3>bidstacker in the news</h3>
+            <a href="https://www.breakit.se/artikel/32593/klart-for-semifinal-har-ar-de-som-gar-vidare-i-shift-svart-att-valja">breakit.se</a>
+          </li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>
       <div className="article__wrap article__post">
-        <p>Trupayers needed an update to their API integrations checking applying customers credit score.</p>
-        <p>I helped them to update their forms with new fields, updated the backend and made sure it is all accessible, fields are validated and looking great too.</p>
+        <p>Trupayers needed an update to their <a onClick={(event) => openJobModal(event)} className="article__pop-link" href="#credit-score-api-integration" title="Credit score API integration">API integrations</a> checking applying customers credit score.</p>
+        <p>I helped them to update their forms with new fields, updated the backend, made sure the frontend is accessible and all fields are validated correctly.</p>
         <ul className="article__links article__links--tech">
           <li>PHP</li>
           <li>Javascript</li>
@@ -147,14 +152,11 @@ export default function Home() {
           <li>API</li>
           <li>CURL</li>
         </ul>
-        <ul className="article__links">
-          <li><a target="_blank" rel="noreferrer" href="https://www.trupayers.com/">trupayers.com</a></li>
-        </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>
       <div className="article__wrap article__post">
-        <p>While working for the academedia cooperation I built their schools a way to build forms for collecting leads. I made so that they could be configured to post to a few different CRM and made sure the rendered frontend was accessible and GDPR compliant.</p>
-        <p>The job was part of a bigger job I helped plan and execute where we built a super-theme for wordpress for quickly launching new sites. The form-builder was built using react and hosted on an admin page powered by a plugin.</p>
+        <p>While working for the academedia cooperation I built their schools a way to create and publish forms for collecting leads. I made so that they can be configured to post to a few different CRM and made sure the rendered frontend was accessible and GDPR compliant.</p>
+        <p>The job was part of a bigger job I helped plan and execute where we built a super-theme for wordpress for quickly launching new sites. The form-<a onClick={(event) => openJobModal(event)} className="article__pop-link" href="#react-form-builder-and-CRM-integrations" title="React form builder and CRM integration">builder</a> was programmed in react and hosted on an admin page powered by a plugin.</p>
         <p>Apart from developing we also maintained alot of old sites we took home to our new inhouse dev-apartment but the first new one I built for them and that also became the prototype for the above mentioned WP-theme was praktiska.se</p>
         <ul className="article__links article__links--tech">
           <li>reactjs</li>
@@ -166,7 +168,10 @@ export default function Home() {
           <li>accessibility</li>
         </ul>
         <ul className="article__links">
-          <li><a target="_blank" rel="noreferrer" href="https://praktiska.se/">praktiska.se</a></li>
+          <li>
+            <h3>One site I made during this time</h3>
+            <a target="_blank" rel="noreferrer" href="https://praktiska.se/">praktiska.se</a>
+          </li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
       </div>
