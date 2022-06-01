@@ -19,7 +19,7 @@ const bgColors = [
 
 const pages = [
   { title: 'About', path: '/about' },
-  { title: 'Parameter64', path: '/parameter64' },
+  { title: 'More', path: '/more' },
 ]
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
