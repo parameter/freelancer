@@ -18,20 +18,18 @@ export default function About() {
   return (
     <>
         <div className="article__wrap article__post">
-        <p>Since i tried to use my brothers 8bit computer to load a 
-game from a cassette-tape when I was 8 or 9 years old I was hooked on what these things can do. 
-One of those times I managed to load up something called a demo where the programmers was 
-showing off what they can do and the harsh sounds coming out of the TV set to max volume 
-might have acctually triggered my love for experimental electronic sounds.</p>
-
-<p>Programming is not the first things I got into. I would jump on anything that 
-made a sound or allowed me to draw and animate images on the screen so when the day came to choose 
-a profession I came to realize that this would allow me to experience that joy of 
-creating things once again.</p>
-
-<p>When I finished my studies I decided to go freelance and my first customers got custom CMS solutions built in PHP and mySQL. 
-However, I quickly got into wordpress that helped improve the time it took to deliver something. Now my life is more about javascript and modern frontend but sometimes those worlds&nbsp;meet and it is a glory to behold.</p>
-
+        <h3 className="article__meta-title">Websites / applications</h3>
+            <p>Ask me for modern realtime sites made in react and next-js (like this one), wordpress CMS solutions modelled to your business and ideas, static sites (headless) or ask me to be part of your team</p>
+            <h3 className="article__meta-title">Decentralized web</h3>
+            <p>Maybe you want your site to be a bit more decentralized and host it on ipfs (interplanetary file system), create a utility NFT for whatever you are doing or perhaps just discuss an idea you want to develop.</p>
+            <h3 className="article__meta-title">SEO</h3>
+            <p>Search robots love my sites so if you know what kind of attention you are looking for I can help you implement the technical parts and coach you to create content to help you reach your goal.</p>
+            <h3 className="article__meta-title">Frontend</h3>
+            <p>I enjoy making accessible interfaces and user experiences. If it looks good and feels great it can take over the world.</p>
+            <h3 className="article__meta-title">email</h3>
+            <p><a href="mailto:parameter64@proton.me">parameter64@proton.me</a></p>
+            <h3 className="article__meta-title">telephone</h3>
+            <p><a href="tel:0046738790924">+46 73 87 909 24</a></p>
             
             <div style={{backgroundImage: 'url(/images/me.webp)'}} className="article__post-icon"></div>
         </div>

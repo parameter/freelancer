@@ -506,9 +506,20 @@ html, body {
 
 .article {
 
+    &__meta-title {
+        font-family: "typewriter";
+        font-size: 12px;
+        letter-spacing: 0.09em;
+        font-weight: 200;
+        padding: 0;
+        margin: 0 0 0px 0;
+        color: #403A24;
+        text-transform: uppercase;
+    }
+
     &__wrap {
         position: relative;
-        padding: 35px 30px 15px 65px;
+        padding: 40px 30px 20px 65px;
         background: #fff;
 
         @media (max-width: '600px') {
