@@ -6,7 +6,8 @@ const nextConfig = {
     ) {
       return {
         '/': { page: '/' },
-        '/about': { page: '/about' }
+        '/about': { page: '/about' },
+        '/more': { page: '/more' }
       }
   },
   reactStrictMode: true,
