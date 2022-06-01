@@ -1,7 +1,8 @@
 import { SessionProvider } from "next-auth/react";
 import Head from 'next/head';
 import { useRef, useState } from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
+import Script from 'next/script';
 import { useRouter } from 'next/router'
 import '../styles/globals.scss';
 import Branding from "../components/branding";
@@ -63,15 +64,26 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
              <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
              <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
              <meta name="google-site-verification" content="d5OTELYsK3ZaL1XAy-cY-s-PeSvDz_4xz_sqTtR4Kg0" />
-             <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR6G7CMM8L"></script>
-             <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
 
-              gtag('config', 'G-KR6G7CMM8L');
-             </script>
+             {/* Global Site Tag (gtag.js) - Google Analytics */}
+             <Script
+                strategy="afterInteractive"
+                src={"https://www.googletagmanager.com/gtag/js?id=G-KR6G7CMM8L"}
+             />
+             <Script
+                id="gtag-init"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments)}
+                      gtag('js', new Date());
+                      gtag('config', 'G-KR6G7CMM8L');
+                  `,
+                }}
+              />
            </Head>
+             
            <div className="base">
             <div className="base__page">
               <div className="base__content">
