@@ -58,7 +58,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
 
   return <SessionProvider session={session}>
            <Head>
-             <title>parameter64 - Freelancing web developer based in stockholm</title>
+             <title>parameter64 - Freelancing web developer and consultant based in stockholm</title>
              <meta name="description" content="Freelancing web developer based in stockholm. LIkes to work with modern frontend like reactjs and nextjs but has done alot of wordpress"/>
              <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
              <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
