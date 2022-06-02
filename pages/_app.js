@@ -64,25 +64,25 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
              <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
              <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
              <meta name="google-site-verification" content="d5OTELYsK3ZaL1XAy-cY-s-PeSvDz_4xz_sqTtR4Kg0" />
-
-             {/* Global Site Tag (gtag.js) - Google Analytics */}
-             <Script
-                strategy="afterInteractive"
-                src={"https://www.googletagmanager.com/gtag/js?id=G-KR6G7CMM8L"}
-             />
-             <Script
-                id="gtag-init"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                      window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments)}
-                      gtag('js', new Date());
-                      gtag('config', 'G-KR6G7CMM8L');
-                  `,
-                }}
-              />
            </Head>
+
+           {/* Global Site Tag (gtag.js) - Google Analytics */}
+           <Script
+              strategy="afterInteractive"
+              src={"https://www.googletagmanager.com/gtag/js?id=G-KR6G7CMM8L"}
+            />
+            <Script
+              id="gtag-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments)}
+                    gtag('js', new Date());
+                    gtag('config', 'G-KR6G7CMM8L');
+                `,
+              }}
+            />
              
            <div className="base">
             <div className="base__page">
