@@ -110,8 +110,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="article__wrap article__post">
-        <h3 className="article__meta-title">Intro - parameter64</h3>
+      <article className="article__wrap article__post">
+        <h3 className="article__meta-title">Intro | parameter64 | Pär Henriksson</h3>
+        <h1 class="article__h1">developer / programmer / konsultant</h1>
         <p>The idea here is to make it easier for &#123;the world&#125; to <a href="#contact" onClick={() => openContactModal()} className="article__pop-link">find me</a>.</p>
         <p>I wanted to see what it would look like without intermediaries. 
         So now, once we can see through the noise and the background radiation of the universe it&apos;s time to get some work&nbsp;done.</p>
@@ -127,8 +128,8 @@ export default function Home() {
           <li>portfolio</li>
         </ul>
         <div style={{backgroundImage: 'url(/images/me.webp)'}} className="article__post-icon"></div>
-      </div>
-      <div className="article__wrap article__post">
+      </article>
+      <article className="article__wrap article__post">
         <p>Recently I have been developing a <a onClick={(event) => openJobModal(event)} className="article__pop-link" href="#bidstacker" title="Bidstacker">product</a> aiming to make a difference in the supply chain for the construction market - helping them to save time in a tight environment.</p>
         <ul className="article__links article__links--tech">
           <li>nextjs/reactjs</li>
@@ -143,8 +144,8 @@ export default function Home() {
           </li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
-      </div>
-      <div className="article__wrap article__post">
+      </article>
+      <article className="article__wrap article__post">
         <p>Trupayers needed an update to their <a onClick={(event) => openJobModal(event)} className="article__pop-link" href="#credit-score-api-integration" title="Credit score API integration">API integrations</a> checking applying customers credit score.</p>
         <p>I helped them to update their forms with new fields, updated the backend, made sure the frontend is accessible and all fields are validated correctly.</p>
         <ul className="article__links article__links--tech">
@@ -155,8 +156,8 @@ export default function Home() {
           <li>CURL</li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
-      </div>
-      <div className="article__wrap article__post">
+      </article>
+      <article className="article__wrap article__post">
         <p>While working for the academedia cooperation I built their schools a way to create and publish forms for collecting leads. I made so that they can be configured to post to a few different CRM and made sure the rendered frontend was accessible and GDPR compliant.</p>
         <p>The job was part of a bigger job I helped plan and execute where we built a super-theme for wordpress for quickly launching new sites. The form-<a onClick={(event) => openJobModal(event)} className="article__pop-link" href="#react-form-builder-and-CRM-integrations" title="React form builder and CRM integration">builder</a> was programmed in react and hosted on an admin page powered by a plugin.</p>
         <p>Apart from developing we also maintained alot of old sites we took home to our new inhouse dev-apartment but the first new one I built for them and that also became the prototype for the above mentioned WP-theme was praktiska.se</p>
@@ -176,7 +177,7 @@ export default function Home() {
           </li>
         </ul>
         <div style={{backgroundImage: 'url(icons/wrench.png)', backgroundSize: '66% auto', backgroundColor: '#FFBF00'}} className="article__post-icon"></div>
-      </div>
+      </article>
       {printContactModal()}
       {printJobModal()}
     </>

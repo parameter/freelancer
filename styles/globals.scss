@@ -506,6 +506,17 @@ html, body {
 
 .article {
 
+    &__h1 {
+        font-family: "typewriter";
+        font-size: 18px;
+        letter-spacing: 0.09em;
+        font-weight: 200;
+        padding: 0;
+        margin: 0 0 27px 0;
+        color: #403A24;
+        text-transform: uppercase;
+    }
+
     &__meta-title {
         font-family: "typewriter";
         font-size: 12px;
