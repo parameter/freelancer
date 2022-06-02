@@ -112,7 +112,7 @@ export default function Home() {
     <>
       <article className="article__wrap article__post">
         <h3 className="article__meta-title">Intro | Pär Henriksson</h3>
-        <h1 class="article__h1">Freelancing web developer and consultant based in stockholm</h1>
+        <h1 className="article__h1">Freelancing web developer and consultant based in stockholm</h1>
         <p>The idea here is to make it easier for &#123;the world&#125; to <a href="#contact" onClick={() => openContactModal()} className="article__pop-link">find me</a>.</p>
         <p>I wanted to see what it would look like without intermediaries. 
         So now, once we can see through the noise and the background radiation of the universe it&apos;s time to get some work&nbsp;done.</p>
